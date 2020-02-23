@@ -1,25 +1,28 @@
 package tests;
 
-import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.Selenide;
-import com.sun.tools.javac.*;
+import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.*;
-import org.openqa.selenium.Keys;
+import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
 import webpages.SetText;
 
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
 
 public class MainTest extends BaseTest {
 
     SetText setText = new SetText();
     String url = "https://can.ua/";
 
+//    @Test
+//    void checkMainPageLogo() {
+//        SelenideElement elem = $(By.name("redirect"));
+//        Assertions.assertTrue(elem.shouldBe(Condition.visible));
+//    }
+
     @Test
-    void checkMainPageLogo() {
-        Assertions.assertTrue($(".main-logo").isDisplayed());
+    void checkInputSearchField() {
+        Assertions.assertTrue($("#search-text").isDisplayed());
     }
 
 //    @Test
